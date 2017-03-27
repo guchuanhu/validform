@@ -13,7 +13,7 @@
         onfocuscheck:true,//获得焦点开始验证
         whichcheck:[
             {
-                name:'loginname',//必填
+                name:'loginname',//input的name,必填
                 required:[true,"账号不能为空"],//选填
                 reg:['^[0-9]*$',"请输入数字"],//选填
                 max:[10,"账号长度不能大于10"],//选填
@@ -21,7 +21,7 @@
             },
             {
                 name:'email',//必填
-                required:[true,"网址不能为空"],//选填
+                required:[true,"网址不能为空"],//input的name,选填
                 reg:["[a-zA-z]+://[^\s]*","请输入正确网址如：https://www.baidu.com"]//选填
             }
         ]
