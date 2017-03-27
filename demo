@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Title</title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/validform.js" type="text/javascript"></script>
+    <style>
+        .validtip{position: relative;display:none;color:red;}
+        .iptsty{border-color: red!important;}
+    </style>
+</head>
+<body>
+<form id="form1" class="login_form">
+    <input type="text" name="loginname" placeholder="用户名/手机号/邮箱" /><br>
+    <input type="text" name="email" placeholder="网址" /><br>
+    <input type="button" valid-button="true" name="btn" value="登录" />
+</form>
+</body>
+<script>
+    $("#form1").validform({
+        btnfn:fn,//提交按钮添加的函数
+        onebyone:true,//true：一个接一个验证，false表单子项全验证
+        onfocuscheck:true,//获得焦点开始验证
+        whichcheck:[
+            {
+                name:'loginname',
+                required:[true,"账号不能为空"],
+                reg:['^[0-9]*$',"请输入数字"],
+                max:[10,"账号长度不能大于10"],
+                min:[6,"账号长度不能小于6"]
+            },
+            {
+                name:'email',
+                required:[true,"网址不能为空"],
+                reg:["[a-zA-z]+://[^\s]*","请输入正确网址如：https://www.baidu.com"]
+            }
+        ]
+    });
+    function fn(){
+        console.log(123);
+    }
+</script>
+</html>
