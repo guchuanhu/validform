@@ -6,7 +6,7 @@
 3、提交校验和获得焦点校验。<br>
 ## 使用讲解
 1、引入validform.js和validform.css,样式表中.validtip和.iptsty可根据需要自行修改。<br>
-2、加入此方法<br>
+2、使用此方法<br>
 <pre>    $("#form1").validform({
         btnfn:fn,//提交按钮添加的函数
         onebyone:true,//true：一个接一个验证，false表单子项全验证
